@@ -61,6 +61,5 @@ def parse_resume_route():
         print(f"An error occurred in /parse_resume: {e}")
         return jsonify({"error": "Failed to parse the resume."}), 500
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+
 
