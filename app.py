@@ -15,9 +15,9 @@ CORS(app)
 
 DATA_FILE_PATH = os.path.join('data', 'jobs.csv')
 
-API_KEY = "Your_API_key"
+API_KEY = os.environ.get("GOOGLE_API_KEY")
 
-if API_KEY != "YOUR_API_KEY_HERE" and genai:
+if API_KEY and genai:
     try:
         genai.configure(api_key=API_KEY)
         print("Google Generative AI configured successfully.")
@@ -63,4 +63,5 @@ def parse_resume_route():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
